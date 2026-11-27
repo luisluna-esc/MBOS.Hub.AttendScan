@@ -1,0 +1,37 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+
+## Visual Studio / Rider
+.vs/
+.idea/
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ll]og/
+[Ll]ogs/
+
+## Rider
+*.DotSettings.user
+
+## NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+## OS files
+.DS_Store
+Thumbs.db
+## Secretos locales (cadena de conexión, clave JWT): no van al repositorio
+appsettings.Development.json
+
+## Datos personales y usuarios: el repositorio es público. Van al servidor aparte (ver DEPLOY.md).
+Scripts/seedPersons.sql
+Scripts/seedUsers.sql

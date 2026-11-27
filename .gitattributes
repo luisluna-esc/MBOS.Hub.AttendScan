@@ -1,0 +1,6 @@
+# Scripts que corren en el servidor Linux: siempre con saltos de línea LF.
+*.sh text eol=lf
+*.sql text eol=lf
+*.conf text eol=lf
+*.example text eol=lf
+Dockerfile text eol=lf

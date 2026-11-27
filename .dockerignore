@@ -1,0 +1,12 @@
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+.git/
+.gitignore
+Scripts/
+*.md
+# Configuración local con contraseñas: nunca dentro de la imagen.
+**/appsettings.Development.json
+AttendScan.Tests/
+deploy/
