@@ -2,6 +2,7 @@ using AttendScan.Application.Dtos.Events;
 using AttendScan.Application.Dtos.People;
 using AttendScan.Application.Dtos.Security;
 using AttendScan.Application.Interfaces.Audit;
+using AttendScan.Application.Interfaces.Dashboard;
 using AttendScan.Application.Interfaces.Events;
 using AttendScan.Application.Interfaces.People;
 using AttendScan.Application.Interfaces.Security;
@@ -90,6 +91,8 @@ public static class DependencyInjection
 
         services.AddScoped<IAttendanceService, AttendanceService>();
         services.AddScoped<IValidator<ScanRequestDto>, ScanRequestValidator>();
+
+        services.AddScoped<IDashboardService, DashboardService>();
 
         return services;
     }
