@@ -38,7 +38,7 @@ public class PersonImportTests
     }
 
     [Fact]
-    public void Real_list_reads_240_people_without_errors_or_duplicates()
+    public void Real_list_reads_244_people_without_errors_or_duplicates()
     {
         if (!File.Exists(RealListPath))
         {
@@ -48,7 +48,7 @@ public class PersonImportTests
         using var stream = File.OpenRead(RealListPath);
         var rows = PersonExcelReader.Read(stream);
 
-        Assert.Equal(240, rows.Count);
+        Assert.Equal(244, rows.Count);
         Assert.All(rows, row => Assert.Empty(row.Errors));
 
         var keys = rows.Select(r => PersonNames.Key(PersonNames.FullName(r.PaternalSurname!, r.MaternalSurname, r.GivenNames!))).ToList();
@@ -66,13 +66,13 @@ public class PersonImportTests
             Assert.True(r.Gender is null or "M" or "F");
             Assert.True(r.Age is null or (>= 1 and <= 120));
         });
-        Assert.Equal(25, rows.Count(r => r.MaternalSurname is null)); // los de un solo apellido
+        Assert.Equal(28, rows.Count(r => r.MaternalSurname is null)); // los de un solo apellido
     }
 
     [Fact]
     public void Original_list_without_split_columns_is_rejected()
     {
-        var original = Path.Combine(Path.GetDirectoryName(RealListPath)!, "names.xlsx");
+        var original = Path.Combine(Path.GetDirectoryName(RealListPath)!, "corregido_MBOS_Cuadro_general_delegados_2026 (1).xlsx");
         if (!File.Exists(original))
         {
             return;
